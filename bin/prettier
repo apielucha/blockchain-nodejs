@@ -1,0 +1,4 @@
+#!/bin/bash
+
+node_modules/.bin/prettier \
+--write "{src,tests}/**/*.{js,mjs}" "*.{js,json}"

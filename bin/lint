@@ -1,0 +1,4 @@
+#!/bin/bash
+
+node_modules/.bin/eslint "{src,tests}/**/*.{js,mjs}" \
+&& echo -e "\E[1;32mNo linter errors.\E[1;37m"

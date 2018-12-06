@@ -1,0 +1,17 @@
+#!/bin/bash
+
+createFileIfNotExists() {
+  if [ -f $1 ]; then
+    return
+  else
+    if [ -f $2 ]; then
+      cp $2 $1
+      echo -e "\E[1;32mFile $1 was generated from file $2.\E[1;37m"
+    else
+      echo -e "\E[1;31mFile $2 does not exist. Can't generate file $1.\E[1;37m"
+    fi
+  fi
+}
+
+createFileIfNotExists '.env' '.env.example'
+# createFileIfNotExists '.editorconfig' '.editorconfig.example'

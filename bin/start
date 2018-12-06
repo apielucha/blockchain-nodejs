@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ -f 'lib/app.js' ]; then
+  node lib/app.js
+else
+  echo -e "\E[1;31mERROR: App not built.\E[1;37m" && exit 1
+fi

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+node_modules/.bin/nodemon src/app.mjs \
+--exec node_modules/.bin/babel-node --extensions '.mjs'
