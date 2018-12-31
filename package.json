@@ -8,6 +8,7 @@
     "dev": "./bin/dev",
     "lint": "./bin/lint",
     "preinstall": "./bin/preinstall",
+    "postinstall": "./bin/postinstall",
     "prettier": "./bin/prettier",
     "start": "./bin/start",
     "test": "./bin/test",
