@@ -4,6 +4,9 @@ lib/
 # environment variables file
 .env
 
+# Flow types
+flow-typed/
+
 
 
 # Created by https://www.gitignore.io/api/node

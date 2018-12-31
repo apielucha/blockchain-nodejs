@@ -1,0 +1,14 @@
+[ignore]
+<PROJECT_ROOT>/node_modules/.*
+
+[include]
+<PROJECT_ROOT>/src/*.mjs
+<PROJECT_ROOT>/tests/*.mjs
+
+[libs]
+
+[lints]
+
+[options]
+
+[strict]
