@@ -1,6 +1,8 @@
 // @flow
 
+import Account from '../../src/components/account';
 import Block from '../../src/components/block';
+import Transaction from '../../src/components/transaction';
 
 describe('components/block.mjs', () => {
   describe('class Block', () => {
@@ -33,9 +35,33 @@ describe('components/block.mjs', () => {
 
     describe('computeHash()', () => {
       it('should return computed hash', async () => {
-        const blo: Block = new Block('this_is_a_hash');
+        const block: Block = new Block('this_is_a_hash');
 
-        expect(typeof (await blo.computeHash())).toBe('string');
+        expect(typeof (await block.computeHash())).toBe('string');
+      });
+    });
+
+    describe('addTransaction()', () => {
+      it('should add a transaction to transactions list', async () => {
+        const block: Block = new Block('this_is_a_hash');
+        await block.addTransaction(
+          new Transaction(10, new Account(), new Account()),
+        );
+
+        expect(block.transactions.length).toBe(1);
+      });
+    });
+
+    describe('addTransactions()', () => {
+      it('should add transactions to transactions list', async () => {
+        const block: Block = new Block('this_is_a_hash');
+        await block.addTransactions([
+          new Transaction(10, new Account(), new Account()),
+          new Transaction(20, new Account(), new Account()),
+          new Transaction(30, new Account(), new Account()),
+        ]);
+
+        expect(block.transactions.length).toBe(3);
       });
     });
   });

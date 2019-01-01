@@ -19,7 +19,7 @@ class Transaction {
     this.timestamp = Date.now();
   }
 
-  async verifySenderBalance(): Promise<boolean> {
+  async verify(): Promise<boolean> {
     return this.sender.balance >= this.amount;
   }
 }

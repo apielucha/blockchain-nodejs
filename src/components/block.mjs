@@ -2,7 +2,7 @@
 
 import crypto from 'crypto';
 
-import Transaction from './transaction';
+import type Transaction from './transaction';
 
 class Block {
   id: string;
@@ -26,6 +26,14 @@ class Block {
     hash.update(this.timestamp.toString());
 
     return hash.digest('hex');
+  }
+
+  async addTransaction(transaction: Transaction) {
+    this.transactions.push(transaction);
+  }
+
+  async addTransactions(transactions: Transaction[]) {
+    this.transactions.push(...transactions);
   }
 }
 

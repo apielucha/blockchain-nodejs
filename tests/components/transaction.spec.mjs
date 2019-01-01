@@ -23,13 +23,13 @@ describe('components/transaction.mjs', () => {
       });
     });
 
-    describe('verifySenderBalance()', () => {
+    describe('verify()', () => {
       it('should return false', async () => {
         const acc1: Account = new Account();
         const acc2: Account = new Account();
         const tran: Transaction = new Transaction(10, acc1, acc2);
 
-        expect(await tran.verifySenderBalance()).toBe(false);
+        expect(await tran.verify()).toBe(false);
       });
 
       it('should return true', async () => {
@@ -38,7 +38,7 @@ describe('components/transaction.mjs', () => {
         const acc2: Account = new Account();
         const tran: Transaction = new Transaction(10, acc1, acc2);
 
-        expect(await tran.verifySenderBalance()).toBe(true);
+        expect(await tran.verify()).toBe(true);
       });
     });
   });
